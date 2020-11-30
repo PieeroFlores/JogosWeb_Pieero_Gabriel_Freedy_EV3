@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <br>
+  <div class="container" style="background-color: rgb(197, 190, 123);">
+    <div >
+    <div class="jumbotron " style="background-color: rgb(214, 124, 124);"><h1>USER LIST</h1>
+    <hr>
+
+    {% if autor_list %}
+    <ul>
+      <div class="jumbotron t2" style="background-color: rgb(255, 242, 122);">
+      {% for autor in autor_list %}
+      <li>
+        <hr>
+        <div class="row">
+          <div class="col-2">
+            <a href="{{ autor.get_absolute_url }}"><img src="{{ autor.foto.url }}" width="100" height="130" class="card-img-top"></a>            
+          </div>
+          <div class="col-3">
+            <a href="{{ autor.get_absolute_url }} " style="text-decoration: none; color: green; font-size: xx-large;" >{{ autor.nombre }}</a> 
+          </div>
+          <div class="col-md-2"><div></div><h4>{{ autor.descripcion }}</h4></div>
+        </div>        
+        <hr>
+      </li>
+      {% endfor %}
+    </div>
+    
+    </ul>
+  </div>
+  </div></div>
+    {% else %}
+      <p>There are no autors in the library.</p>
+    {% endif %}  
+  <br>     
+{% endblock %}

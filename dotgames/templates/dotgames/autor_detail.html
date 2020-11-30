@@ -1,0 +1,183 @@
+{%extends "base.html"%}
+{% load static %}
+
+{%block content%}
+
+<br>
+<div class="container pt-3 col-lg-12" style="background-color: rgb(157, 199, 206);">
+    <!--Foto perfil + nombre usuario + botón edición-->
+    <div class="container row">
+        <img src="{{ autor.foto.url }}" width="100" height="100" class="img-fluid col-xl-3 col-lg-3 col-md-3 col-sm-3" >
+        <p class=" display-3 col-xl-9 col-lg-9 col-md-9 col-sm-9" style="padding-top: 200px;" id="nuser">{{ autor.nombre}}</p>            
+    </div>
+    
+    <br>        
+
+    <div class="container row">
+
+        <div class="main">    
+            <!--Info del usuario + RRSS-->            
+            <hr>
+            <div class="container ">
+                <div class="row col-12">
+                    <div class="col-md-1">
+                        <i class="fas fa-info-circle fa-3x" ></i>
+                    </div>
+                    <div class="col-md-11">
+                        <h2>datos usuario</h2> 
+                    </div>
+                </div>                                       
+            </div>
+            <div class="container">
+                <div class="row">
+                    <p class="col-md-11" style="font-size: 30px;">sexo: <a href="" style="text-decoration: none; color: green; font-size: xx-large;">{{ autor.sexo}}</a></p>
+                </div>                    
+            </div>
+            <div class="container">
+                <div class="row">
+                    <p class="col-md-11" style="font-size: 30px;">descripcion: <a href="" style="text-decoration: none; color: green; font-size: xx-large;">{{ autor.descripcion}}</a></p>
+                </div>                    
+            </div>
+        
+            <br>
+            <br>
+            <a href="{% url 'autor_delete' autor.id %}" target="_self" name="editar_profile" id="editprofile" class="btn btn-secondary btn-lg">Eliminar usuario</a>
+            <a href="{% url 'autor_update' autor.id %}" target="_self" name="editar_profile" id="editprofile" class="btn btn-secondary btn-lg">editar usuario</a>  
+                               
+            <br>                
+            <br>
+            <hr>
+      
+            <div class="container">
+                <div class="row">
+                    <a class="col-md-1" href="https://www.facebook.com">
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    </a>
+                    <p class="col-md-11" style="font-size: 30px;">Feibun</p>
+                </div>                    
+            </div>
+            <div class="container">
+                <div class="row">
+                    <a class="col-md-1" href="https://twitter.com">
+                        <i class="fab fa-twitter-square fa-3x"></i>
+                    </a>
+                    <p class="col-md-11" style="font-size: 30px;">Tuiter</p>
+                </div>                    
+            </div>
+            <div class="container">
+                <div class="row">
+                    <a class="col-md-1" href="https://www.instagram.com">
+                        <i class="fab fa-instagram fa-3x"></i>
+                    </a>
+                    <p class="col-md-11" style="font-size: 30px;">Intagran</p>
+                </div>
+                
+            </div>
+            <hr>
+            <!--Actividad/Historial-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <i class="fas fa-clock fa-3x"></i>
+                    </div>
+                    <div class="col-md-11">
+                        <h2>Actividad reciente</h2>
+                    </div>                        
+                </div>                    
+            </div>
+            <br>
+            <ul> 
+                <li style="font-weight: bolder;"><a href="{{ autor.get_absolute_url }}"><img src="{% static 'img/missing.png' %}" style="height: 72px; width: 128px;"></a> Juego generico 1</li>
+                <br>
+                <li style="font-weight: bolder;"><a href="{{ autor.get_absolute_url }}"><img src="{% static 'img/missing.png' %}" style="height: 72px; width: 128px;"></a>  Juego genérico 2</li>
+                </ul>
+            <hr>
+            <!--Minigames jugados-->
+            <div class="container row">
+                <div class="row">
+                    <div class="col-md-1">
+                        <i class="fas fa-gamepad fa-3x"></i>
+                    </div>
+                    <div class="col-md-11">
+                        <h2>Minijuegos jugados</h2>
+                    </div>                        
+                </div>                  
+            </div>
+            <br>
+            <div class="container row ">
+                <div class="container miniaturas">
+                    <a href="juego.html"><img class="img-thumbnail" src="{% static 'img/emil.jpg' %}" style="height: 75px; width: 75px;"></a>                        
+                    <p>Juego genérico 1</p>
+                </div>
+                <div class="container miniaturas">
+                    <a href="juego.html"><img class="img-thumbnail" src="{% static 'img/emil.jpg' %}" style="height: 75px; width: 75px;"></a>
+                    <p>Juego genérico 2</p>
+                </div>  
+                <div class="container miniaturas">
+                    <a href="juego.html"><img class="img-thumbnail" src="{% static 'img/emil.jpg' %}" style="height: 75px; width: 75px;"></a>
+                    <p>Juego genérico 3</p>
+                </div>  
+                <div class="container miniaturas">
+                    <a href="juego.html"><img class="img-thumbnail" src="{% static 'img/emil.jpg' %}" style="height: 75px; width: 75px;"></a>
+                    <p>Juego genérico 4</p>
+                </div>  
+                <div class="container miniaturas">
+                    <a href="juego.html"><img class="img-thumbnail" src="{% static 'img/emil.jpg' %}" style="height: 75px; width: 75px;"></a>
+                    <p>Juego genérico 5</p>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <!--Medallitas earned-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <i class="fas fa-medal fa-3x"></i>
+                    </div>
+                    <div class="col-md-11">
+                        <h2>Medallas</h2>
+                    </div>                        
+                </div>                    
+            </div>
+            <br>
+            <div class="container">
+                <div class="row achievements">
+                    <div class="col-md-2">
+                        <img src="{% static 'img/no.png' %}" style="height: 80px; width: 80px;">
+                    </div>
+                    <div class="col-md-10">
+                        <h6>Unknown achievement</h6>
+                    </div>                        
+                </div>                                                               
+                <br>
+                <div class="row achievements">
+                    <div class="col-md-2">
+                        <img src="{% static 'img/no.png' %}" style="height: 80px; width: 80px;">
+                    </div>
+                    <div class="col-md-10">
+                        <h6>Unknown achievement</h6>
+                    </div>                        
+                </div>  
+                <br>
+                <div class="row achievements">
+                    <div class="col-md-2">
+                        <img src="{% static 'img/no.png' %}" style="height: 80px; width: 80px;">
+                    </div>                        
+                    <div class="col-md-10">
+                        <h6>Unknown achievement</h6>
+                    </div>                        
+                </div>  
+            </div>                
+        </div>
+    </div>
+    <br>
+</div>
+<br>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+{%endblock%}

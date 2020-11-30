@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content%}
+{% if request.user.is_authenticated %}
+
+<p></p>
+<div class="container" style="background-color: rgb(207, 168, 202);">
+    <br>
+    <div class="jumbotron" style="background-color:rgba(101, 162, 170, 0.133);">
+        <div class="row">
+        <div class="container" style="background-color: cadetblue;"><h1 class="text-center" style="font-size: 50px;" >Sube tu propio juego</h1></div>
+        <hr><br>
+        
+        <div  class="col-lg-1"><img src="{% static 'img/i.png' %}" alt="" style="padding-bottom: 60px";></div>
+        <div class="col-lg-5"></div>
+        <div  class="col-lg-1"><img src="{% static 'img/head.png' %}" alt="" style="padding-bottom: 60px";></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-3"></div>
+           
+            <div class="col-lg-6" style="background-color: rgb(168, 105, 226);">
+                <h1 style="font-style: oblique;">Sube tu juego</h1>
+                <hr>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="subir">
+                  </form>
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+{% else %}
+<hr>
+<div class="container">
+    <div class="jumbotron t4">
+    <h1>DEBES ESTAR LOGUEADO COMO USUARIO PARA PODER SUBIR UN JUEGO</h1>
+</div>
+</div>
+<hr>
+{% endif %}
+
+{%endblock%}

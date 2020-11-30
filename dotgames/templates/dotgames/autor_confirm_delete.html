@@ -1,0 +1,17 @@
+{%extends "base.html" %}
+
+{%block content%}
+<br>
+<div class="container" style="background-color: darksalmon;">
+<h1> Delete user </h1>
+<hr>
+<p>Are you sure you want to delete the user: {{autor}} ?</p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" action="" value="yes, Delete">
+</form>
+<br>
+</div>
+<br>
+{%endblock%}

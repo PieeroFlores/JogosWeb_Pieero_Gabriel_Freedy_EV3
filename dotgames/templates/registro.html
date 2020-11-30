@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <div>. </div>
+
+        <div class="col-1"> </div>
+
+        <div class="card col-10">
+            <h1>CREAR USUARIO</h1>
+            <p>Bienvenido a  <em>SpaceDot</em>
+            <h2>Ingrese los siguientes datos</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div>. </div>
+
+    </div>
+</div>
+
+{% endblock %}

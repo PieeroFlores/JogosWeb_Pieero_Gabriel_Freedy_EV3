@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content%}
+{% if request.user.is_authenticated %}
+<p></p>
+<div class="container" style="background-color: rgb(207, 168, 202);">
+    <br>
+    <div class="jumbotron" style="background-color:rgba(101, 162, 170, 0.133);">
+        <div class="row">
+        <div class="container" style="background-color: cadetblue;"><h1 class="text-center" style="font-size: 50px;" >Crea un perfil</h1></div>
+        <hr><br>
+        
+        <div  class="col-lg-1"><img src="{% static 'img/i.png' %}" alt="" style="padding-bottom: 60px";></div>
+        <div class="col-lg-5"></div>
+        <div  class="col-lg-1"><img src="{% static 'img/head.png' %}" alt="" style="padding-bottom: 60px";></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-3"></div>
+           
+            <div class="col-lg-6" style="background-color: rgb(168, 105, 226);">
+                <h1 style="font-style: oblique;">Crea y modifica tu perfil</h1>
+                <hr>
+                    <form action ="" method="post" class="form-control border-right-0 w-100" >
+                        {%csrf_token%}
+                        <table>
+                            {{form.as_table}}
+    
+                        </table>
+                        <br><hr>
+                        <input type="submit" value ="Enviar">
+                    </form>
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+
+{% else %}
+<hr>
+<div class="container">
+    <div class="jumbotron t4">
+    <h1>DEBES ESTAR LOGUEADO COMO USUARIO PARA PODER CREAR SU PERFIL</h1>
+</div>
+</div>
+<hr>
+{% endif %}
+{%endblock%}
+
+

@@ -1,0 +1,20 @@
+.caja-formulario {
+  width: 320px;
+  height: 420px;
+  background: #000;
+  color: #fff;
+  
+  
+  
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+
+body {
+  background-image: url(https://i.pinimg.com/originals/b1/bd/c1/b1bdc1ae539dcbd1a7c33cef3e5f2d9a.gif);
+  background-position: 100%;
+}
+
+#ngame{
+  color: beige;
+}
